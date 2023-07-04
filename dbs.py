@@ -1,5 +1,8 @@
-from utility import Base, inspector, engine
-from sqlalchemy import Column, BigInteger, PickleType, String, DateTime, func, Integer
+from sqlalchemy import (BigInteger, Column, DateTime, Integer, PickleType,
+                        String, func)
+
+from utility import Base, engine, inspector
+
 
 class Games(Base):
     __tablename__ = "Games"
@@ -10,7 +13,8 @@ class Games(Base):
     moves = Column(PickleType)
     start_time = Column(DateTime(timezone=True))
     result = Column(String)
-    
+
+
 class Playing(Base):
     __tablename__ = "Playing"
     index = Column(Integer, primary_key=True, autoincrement=True)
@@ -18,10 +22,15 @@ class Playing(Base):
     black_id = Column(BigInteger)
     message_id = Column(BigInteger)
     channel_id = Column(BigInteger)
-    start_time = Column(DateTime(timezone=True), default=func.now()) #func.now() adds timestamp when new row is created
+    start_time = Column(
+        DateTime(timezone=True), default=func.now()
+    )  # func.now() adds timestamp when new row is created
     movenum = Column(BigInteger)
     board = Column(PickleType)
-    lastmove_time = Column(DateTime(timezone=True), onupdate=func.now()) #updates timestamp whenever row is updated
+    lastmove_time = Column(
+        DateTime(timezone=True), onupdate=func.now()
+    )  # updates timestamp whenever row is updated
+
 
 class Solving(Base):
     __tablename__ = "Solving"
@@ -33,7 +42,8 @@ class Solving(Base):
     board = Column(PickleType)
     movelist = Column(PickleType)
     level = Column(String)
-    #lastmove_time = Column(DateTime(timezone=True), onupdate=func.now()) #updates timestamp whenever row is updated
+    # lastmove_time = Column(DateTime(timezone=True), onupdate=func.now()) #updates timestamp whenever row is updated
+
 
 class Solved(Base):
     __tablename__ = "Solved"
@@ -46,6 +56,7 @@ class Solved(Base):
     hard = Column(BigInteger)
     score = Column(BigInteger)
 
+
 class Viewing(Base):
     __tablename__ = "Viewing"
 
@@ -55,6 +66,7 @@ class Viewing(Base):
     movenum = Column(BigInteger)
     board = Column(PickleType)
     moves = Column(PickleType)
+
 
 if not inspector.has_table(Games.__tablename__):
     Games.__table__.create(bind=engine)
