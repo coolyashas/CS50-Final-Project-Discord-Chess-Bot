@@ -22,7 +22,6 @@ load_dotenv()
 apikey = os.environ.get("apikey")
 path = os.environ.get("path")
 
-
 url = "https://chess-puzzles.p.rapidapi.com/"
 
 headers = {
@@ -31,7 +30,6 @@ headers = {
 }
 
 scores = {"easy": 10, "medium": 30, "hard": 80}
-
 
 # Cog = Component of a Guild
 class Tactics(commands.Cog):
@@ -209,16 +207,16 @@ class Tactics(commands.Cog):
         svg_obj = chess.svg.board(board=board)
         png_obj = cairosvg.svg2png(bytestring=svg_obj)
 
-        with open(f"{path}tactics/{message_id}.png", "wb") as file:
+        with open(f"{path}/tactics/{message_id}.png", "wb") as file:
             file.write(png_obj)
-        file = discord.File(f"{path}tactics/{message_id}.png")
+        file = discord.File(f"{path}/tactics/{message_id}.png")
 
         embed = message.embeds[0]
         if board.turn == chess.WHITE:
             embed.title = "White to play"
         elif board.turn == chess.BLACK:
             embed.title = "Black to play"
-        embed.set_image(url=f"attachment:/{path}tactics/{message_id}.png")
+        embed.set_image(url=f"attachment:/{path}/tactics/{message_id}.png")
 
         await message.edit(embed=embed, attachments=[file])
 
@@ -293,9 +291,9 @@ class Tactics(commands.Cog):
                 embed.title = f"{int(len(movelist)/2)} Moves, Black to play"
 
             time = datetime.now()
-            with open(f"{path}tactics/initial{time}.png", "wb") as file:
+            with open(f"{path}/tactics/initial{time}.png", "wb") as file:
                 file.write(png_obj)  # type:ignore
-            file = discord.File(f"{path}tactics/initial{time}.png")
+            file = discord.File(f"{path}/tactics/initial{time}.png")
 
             message = await selected_i.channel.send(embed=embed, file=file)
 

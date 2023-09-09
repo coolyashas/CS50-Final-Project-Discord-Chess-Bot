@@ -52,9 +52,9 @@ class Viewfn(commands.Cog):
         svg_obj = chess.svg.board(board=chess.Board())
         png_obj = cairosvg.svg2png(bytestring=svg_obj)
 
-        with open("{path}views/initial.png", "wb") as file:
+        with open(f"{path}/views/initial.png", "wb") as file:
             file.write(png_obj)  # type:ignore
-        file = discord.File("{path}views/initial.png")
+        file = discord.File(f"{path}/views/initial.png")
 
         message = await i.user.send(embed=embed, view=view, file=file)
         # Till this line we just send a board to the user in the starting position
@@ -160,13 +160,13 @@ class Viewfn(commands.Cog):
         svg_obj = chess.svg.board(board=board, orientation=board.turn)
         png_obj = cairosvg.svg2png(bytestring=svg_obj)
 
-        with open(f"{path}views/{embed_id}{channel_id}.png", "wb") as file:
+        with open(f"{path}/views/{embed_id}{channel_id}.png", "wb") as file:
             file.write(png_obj)  # type:ignore
-        file = discord.File(f"{path}views/{embed_id}{channel_id}.png")
+        file = discord.File(f"{path}/views/{embed_id}{channel_id}.png")
 
         embed = message.embeds[0]
         embed.title = "Move " + str(math.ceil(movenum / 2))
-        embed.set_image(url=f"attachment:/{path}views/{embed_id}{channel_id}.png")
+        embed.set_image(url=f"attachment:/{path}/views/{embed_id}{channel_id}.png")
 
         await message.edit(embed=embed, attachments=[file])
 

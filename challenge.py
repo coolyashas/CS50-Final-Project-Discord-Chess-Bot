@@ -173,13 +173,13 @@ class Challenge(commands.Cog):
         svg_obj = chess.svg.board(board=board, orientation=board.turn)
         png_obj = cairosvg.svg2png(bytestring=svg_obj)
 
-        with open(f"{path}challenges/{message_id}.png", "wb") as file:
+        with open(f"{path}/challenges/{message_id}.png", "wb") as file:
             file.write(png_obj)
-        file = discord.File(f"{path}challenges/{message_id}.png")
+        file = discord.File(f"{path}/challenges/{message_id}.png")
 
         embed = message.embeds[0]
         embed.title = "Move " + str(math.ceil(movenum / 2))
-        embed.set_image(url=f"attachment:/{path}challenges/{message_id}.png")
+        embed.set_image(url=f"attachment:/{path}/challenges/{message_id}.png")
 
         await message.edit(embed=embed, attachments=[file])
 
@@ -231,9 +231,9 @@ class Challenge(commands.Cog):
                     print(f"b == member, id:{b.id}")
 
                 embed = discord.Embed(title=f"{w} vs {b}")
-                embed.set_image(url="attachment:/{path}challenges/initial.png")
+                embed.set_image(url=f"attachment:/{path}/challenges/initial.png")
 
-                file = discord.File("{path}challenges/initial.png")
+                file = discord.File(f"{path}/challenges/initial.png")
 
                 message = await ctx.channel.send(
                     embed=embed, view=discord.ui.View(), file=file
