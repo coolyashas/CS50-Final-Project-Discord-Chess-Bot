@@ -16,6 +16,7 @@ from sqlalchemy import or_
 
 from dbs import Games, Playing
 from utility import Session
+#from main import client as bot
 
 load_dotenv()
 path = os.environ.get("path")
@@ -55,6 +56,8 @@ class Challenge(commands.Cog):
             "Nice opinion, just one tiny problem with it. Inspecting your message, it looks like your opinion is different from mine. Let me tell you something, I am the baseline for opinions. Any opinion I hold is objectively correct and as a result, any other opinions are wrong. Guess what? You happen to hold the wrong one! I hope you know that your opinion is now illegal. I have contacted the FBI, CIA, the NSA, the navy seals, secret service, and your mom! You'll be sorry you ever shared your opinions, by the time you're reading this, you'll be done for. Nature will punish you, humanity will punish you, space will punish you. We decided just to make sure we'll nuke your house from orbit. So there's no chance you can run away, everyone will know you will die. It's a small price to pay, to remove your wrong opinion from this world. @everyone"
         )
 
+
+
     @slash.command(
         name="move",
         description="Make your move\nExample:e2e4 (Initial square to final square)",
@@ -64,7 +67,6 @@ class Challenge(commands.Cog):
         await ctx.response.send_message(
             content="okey", delete_after=0.0001, ephemeral=True
         )
-
         results = (
             self.session.query(
                 Playing.white_id,
@@ -74,7 +76,8 @@ class Challenge(commands.Cog):
                 Playing.message_id,
                 Playing.start_time,
             )
-            .filter(Playing.channel_id == ctx.channel.id)
+            .filter(or_(Playing.white_id == ctx.user.id, Playing.black_id == ctx.user.id),
+                    Playing.channel_id == ctx.channel.id)
             .first()
         )
 
@@ -85,6 +88,7 @@ class Challenge(commands.Cog):
             return
 
         if ctx.user.id != results.white_id and ctx.user.id != results.black_id:
+            print(ctx.user.id, results.white_id, results.black_id)
             await ctx.channel.send(f"{ctx.user.mention} you aren't even playing stfu")
             return
 
