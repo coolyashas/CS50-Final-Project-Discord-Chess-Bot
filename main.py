@@ -26,5 +26,5 @@ class MyBot(commands.Bot):
         await self.tree.sync(guild=None)
 
 if __name__ == "__main__":
-    client = MyBot()     #client = MyBot(prefix="!"), also ctx.user.id should become ctx.author.id
+    client = MyBot(prefix="")     #client = MyBot(prefix="!"), also ctx.user.id should become ctx.author.id
     client.run(token)

@@ -1,5 +1,4 @@
-from sqlalchemy import (BigInteger, Column, DateTime, Integer, PickleType,
-                        String, func)
+from sqlalchemy import BigInteger, Column, DateTime, Integer, PickleType, String, func
 
 from utility import Base, engine, inspector
 
@@ -78,3 +77,5 @@ if not inspector.has_table(Solving.__tablename__):
     Solving.__table__.create(bind=engine)
 if not inspector.has_table(Viewing.__tablename__):
     Viewing.__table__.create(bind=engine)
+
+

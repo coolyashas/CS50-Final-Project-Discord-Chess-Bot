@@ -46,7 +46,7 @@ class Tactics(commands.Cog):
             """Title: Discord Chess Bot\nCreator: Yashas Donthi\nMade with love in Bangalore, India :heart:"""
         )
 
-    @slash.command(name="s", description="Make your move to solve the puzzle")
+    @slash.command(name="solve", description="Make your move to solve the puzzle")
     async def solve(self, ctx, move: str):
         await ctx.response.send_message(
             content="okey", delete_after=0.0001, ephemeral=True

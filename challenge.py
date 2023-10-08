@@ -233,8 +233,7 @@ class Challenge(commands.Cog):
                     b = member
                     print(f"w == ctx.user, id:{w.id}")
                     print(f"b == member, id:{b.id}")
-
-                embed = discord.Embed(title=f"{w} vs {b}")
+                embed = discord.Embed(title=f"{str(w)[:-3]}(White) vs {str(b)[:-3]}(Black)")
                 embed.set_image(url=f"attachment:/{path}/challenges/initial.png")
 
                 file = discord.File(f"{path}/challenges/initial.png")
@@ -260,7 +259,7 @@ class Challenge(commands.Cog):
         view = View().add_item(b1).add_item(b2)
 
         await ctx.channel.send(
-            f"{member.mention}, {str(ctx.user)[:-2]} challenges you to a game of chess!",
+            f"{member.mention}, {str(ctx.user)[:-5]} challenges you to a game of chess!",
             view=view,
         )
 
