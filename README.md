@@ -1,4 +1,4 @@
-Discord Chess Bot (Version 1.0)
+### Discord Chess Bot (Version 1.0)
 
 ## Description
 
