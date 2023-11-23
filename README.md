@@ -77,8 +77,8 @@ Your contributions are appreciated!
 
 If you have any questions, feedback, or suggestions regarding the Discord Chess Bot, feel free to reach out to me:
 
-Name: Coming soon  
-Email: Coming soon
+Name: Yashas Donthi  
+Email: 2yashas2@gmail.com
 
 ## Release Notes: Version 1.0
 
