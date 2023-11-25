@@ -3,6 +3,7 @@
 ## Description
 
 This Discord Bot allows users to play chess games, solve tactics, view and analyze previously played games, and check their personal stats. The bot is built using python with the `discord.py` library for interacting with the Discord API and the `chess` library for handling chess game logic.
+Note: This is a fully individual personal project.
 
 ## Video Demo
 
