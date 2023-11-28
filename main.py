@@ -1,6 +1,6 @@
-# Trigger point for the whole program
-import os
+# Trigger point for the entire program
 
+import os
 import discord
 from discord.ext import commands
 from dotenv import load_dotenv
@@ -15,7 +15,7 @@ class MyBot(commands.Bot):
     def __init__(self, prefix):
         intents = (
             discord.Intents.default()
-        )  # this disables message_content so we have to enable it again
+        )  #this disables message_content so we have to enable it again
         intents.message_content = True
         super().__init__(command_prefix=prefix, intents=intents)
 
@@ -26,5 +26,5 @@ class MyBot(commands.Bot):
         await self.tree.sync(guild=None)
 
 if __name__ == "__main__":
-    client = MyBot(prefix="")     #client = MyBot(prefix="!"), also ctx.user.id should become ctx.author.id
+    client = MyBot(prefix="")
     client.run(token)

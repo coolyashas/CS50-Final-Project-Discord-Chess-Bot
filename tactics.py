@@ -31,6 +31,7 @@ headers = {
 
 scores = {"easy": 10, "medium": 30, "hard": 80}
 
+
 # Cog = Component of a Guild
 class Tactics(commands.Cog):
     def __init__(self, bot: commands.Bot):
@@ -271,7 +272,7 @@ class Tactics(commands.Cog):
                 response = requests.get(url=url, headers=headers, params=params)
                 response_data = response.json()
             except:
-                await selected_i.channel.send("API limit exceeded, possibly.")
+                await selected_i.channel.send("API limit exceeded!")
                 return
 
             print("1:", response_data)
@@ -290,7 +291,7 @@ class Tactics(commands.Cog):
             elif board.turn == chess.BLACK:
                 embed.title = f"{int(len(movelist)/2)} Moves, Black to play"
 
-            time = datetime.now()
+            time = datetime.now().strftime(r"%Y-%m-%d_%H_%M_%S.%f")
             with open(f"{path}/tactics/initial{time}.png", "wb") as file:
                 file.write(png_obj)  # type:ignore
             file = discord.File(f"{path}/tactics/initial{time}.png")
@@ -386,7 +387,7 @@ class Tactics(commands.Cog):
         await ctx.channel.send(embed=embed)
 
 
-# When you integrate the bot with Discord using bot.run(), Discord.py automatically scans the
+# When we integrate the bot with Discord using bot.run(), Discord.py automatically scans the
 # registered cogs and initializes them by calling their respective __init__ methods and other
 # necessary setup functions. This includes calling the setup function of each cog that has been
 # added using bot.add_cog().

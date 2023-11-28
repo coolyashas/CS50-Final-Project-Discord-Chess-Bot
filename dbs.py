@@ -1,10 +1,9 @@
 from sqlalchemy import BigInteger, Column, DateTime, Integer, PickleType, String, func
-
 from utility import Base, engine, inspector
-
 
 class Games(Base):
     __tablename__ = "Games"
+    
     index = Column(Integer, primary_key=True, autoincrement=True)
     white_id = Column(BigInteger)
     black_id = Column(BigInteger)
@@ -16,6 +15,7 @@ class Games(Base):
 
 class Playing(Base):
     __tablename__ = "Playing"
+
     index = Column(Integer, primary_key=True, autoincrement=True)
     white_id = Column(BigInteger)
     black_id = Column(BigInteger)
@@ -41,7 +41,6 @@ class Solving(Base):
     board = Column(PickleType)
     movelist = Column(PickleType)
     level = Column(String)
-    # lastmove_time = Column(DateTime(timezone=True), onupdate=func.now()) #updates timestamp whenever row is updated
 
 
 class Solved(Base):
@@ -77,5 +76,3 @@ if not inspector.has_table(Solving.__tablename__):
     Solving.__table__.create(bind=engine)
 if not inspector.has_table(Viewing.__tablename__):
     Viewing.__table__.create(bind=engine)
-
-

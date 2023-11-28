@@ -47,17 +47,6 @@ class Challenge(commands.Cog):
         # ephemeral means only user who interacted can see that message
         await ctx.user.send(f"I love you too, {str(ctx.user)[:-2]}")
 
-    @slash.command(name="who-asked", description="noone")
-    async def noone_asked(self, ctx):
-        await ctx.response.send_message(
-            content="okey", delete_after=0.0001, ephemeral=True
-        )
-        await ctx.channel.send(
-            "Nice opinion, just one tiny problem with it. Inspecting your message, it looks like your opinion is different from mine. Let me tell you something, I am the baseline for opinions. Any opinion I hold is objectively correct and as a result, any other opinions are wrong. Guess what? You happen to hold the wrong one! I hope you know that your opinion is now illegal. I have contacted the FBI, CIA, the NSA, the navy seals, secret service, and your mom! You'll be sorry you ever shared your opinions, by the time you're reading this, you'll be done for. Nature will punish you, humanity will punish you, space will punish you. We decided just to make sure we'll nuke your house from orbit. So there's no chance you can run away, everyone will know you will die. It's a small price to pay, to remove your wrong opinion from this world. @everyone"
-        )
-
-
-
     @slash.command(
         name="move",
         description="Make your move\nExample:e2e4 (Initial square to final square)",
@@ -89,7 +78,7 @@ class Challenge(commands.Cog):
 
         if ctx.user.id != results.white_id and ctx.user.id != results.black_id:
             print(ctx.user.id, results.white_id, results.black_id)
-            await ctx.channel.send(f"{ctx.user.mention} you aren't even playing stfu")
+            await ctx.channel.send(f"{ctx.user.mention} you are not participating in any active games in this channel")
             return
 
         w_id = results.white_id
@@ -116,7 +105,7 @@ class Challenge(commands.Cog):
             print("Is it white's turn?", chess.WHITE)
             print("list(board.legal_moves):", list(board.legal_moves), "\n")
 
-            if move in list(board.legal_moves):  # board.legal_moves is a generator btw
+            if move in list(board.legal_moves):  #board.legal_moves is a generator!
                 board.push(move)
                 movenum += 1
                 print("Move made")

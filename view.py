@@ -23,10 +23,9 @@ from utility import Session
 load_dotenv()
 path = os.environ.get("path")
 
-"""it is not possible to fetch a message using just the message ID without specifying the 
+"""It is not possible to fetch a message using just the message ID without specifying the 
 channel ID. In Discord's API, the combination of the message ID and the channel ID uniquely 
 identifies a message within a server."""
-
 
 class Viewfn(commands.Cog):
     def __init__(self, bot: commands.Bot):
@@ -80,8 +79,7 @@ class Viewfn(commands.Cog):
         await i.response.send_message(
             content="okey", delete_after=0.0001, ephemeral=True
         )
-        # Just need to extract moves of the game from the board object stored for that row
-        # in the database
+        #Just need to extract moves of the game from the board object stored for that row in the database
 
         result = (
             self.session.query(Viewing)
@@ -175,11 +173,11 @@ class Viewfn(commands.Cog):
         await ctx.response.send_message(
             content="okey", delete_after=0.0001, ephemeral=True
         )
-        # User should input a member, in DMs it should show them an embed with 5 columns: white, black,
-        # result, start date & time, green arrow buttons. Only after they click a button,
-        # a board of that game will load in their DMs, and they can view it
+        #User should input a member, in DMs it should show them an embed with 5 columns: white, black,
+        #result, start date & time, green arrow buttons. Only after they click a button,
+        #a board of that game will load in their DMs, and they can view it
 
-        # Retrieve past games for the specified member from the database
+        #Retrieve past games for the specified member from the database
         games = (
             self.session.query(Games)
             .filter(
