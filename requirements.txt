@@ -1,6 +1,6 @@
-CairoSVG==2.5.2
-chess==1.9.4
-discord.py==2.2.3
-python-dotenv==1.0.0
-Requests==2.31.0
-SQLAlchemy==1.4.46
+CairoSVG==2.1.3
+chess
+discord.py
+python-dotenv
+requests
+SQLAlchemy

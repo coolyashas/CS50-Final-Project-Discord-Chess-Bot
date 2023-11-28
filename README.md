@@ -2,7 +2,7 @@
 
 ## Description
 
-### Note: This is a fully individual personal project.
+### Note: This is a self-directed personal project which is optimized for the Linux Ubuntu environment.
 
 This Discord Bot allows users to play chess games, solve tactics, view and analyze previously played games, and check their personal stats. The bot is built using python with the `discord.py` library for interacting with the Discord API and the `chess` library for handling chess game logic.
 
@@ -12,18 +12,38 @@ This Discord Bot allows users to play chess games, solve tactics, view and analy
 
 ## Installation & Setup
 
-Coming soon
+To set up the project, follow these steps:
+
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/coolyashas/Discord-Chess-Bot.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd Discord-Chess-Bot
+    ```
+
+3. Install all necessary libraries:
+
+    ```bash
+    pip install -r requirements.txt
+    ```
+
+This will set up the Discord Chess Bot codebase and its dependencies for your use.
 
 ## Usage
 
 The Discord Chess Bot fully utilizes Discord slash commands for its functionality. Please ensure that the bot has the necessary permissions in your server to prevent any issues.
 
-- The /move and /solve commands require an input in the form of "initial square to target square".
+- The `/move` and `/solve` commands require an input in the form of "initial square to target square".
 
-- /challenge and /move:  Use these commands to play chess games with other members of the server.
-- /tactics and /solve:  Use these commands to solve chess tactics.
-- /view:  Use this command to view and analyze previously played games of any member of the server.
-- /stats:  Use this command to track tactics solved, score, and games played of any member of the server.
+- `/challenge` and `/move`:  Use these commands to play chess games with other members of the server.
+- `/tactics` and `/solve`:  Use these commands to solve chess tactics.
+- `/view`:  Use this command to view and analyze previously played games of any member of the server.
+- `/stats`:  Use this command to track tactics solved, score, and games played of any member of the server.
 
 Correct Format:   g1f3  
 Incorrect Format: Nf3
