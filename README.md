@@ -42,7 +42,8 @@ The Discord Chess Bot fully utilizes Discord slash commands for its functionalit
 
 - The `/move` and `/solve` commands require an input in the form of "initial square" to "target square".
 
-Format for `/move` and `/solve` slash commands:
+- Format for `/move` and `/solve` slash commands:
+
 Correct Format:   g1f3  
 Incorrect Format: Nf3
 
