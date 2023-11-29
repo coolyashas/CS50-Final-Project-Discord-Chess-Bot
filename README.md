@@ -34,6 +34,8 @@ To set up the project, follow these steps:
 
 This will set up the Discord Chess Bot codebase and its dependencies for your use.
 
+To run the bot, follow the instructions given in the `.env` file and and then run the `main.py` file.
+
 ## Usage
 
 The Discord Chess Bot fully utilizes Discord slash commands for its functionality. Please ensure that the bot has the necessary permissions in your server to prevent any issues.
