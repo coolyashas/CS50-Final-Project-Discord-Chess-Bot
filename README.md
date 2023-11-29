@@ -4,7 +4,7 @@
 
 ### Note: This is a self-directed personal project which is optimized for the Linux Ubuntu environment.
 
-This Discord Bot allows users to play chess games, solve tactics, view and analyze previously played games, and check their personal stats. The bot is built using python with the `discord.py` library for interacting with the Discord API and the `chess` library for handling chess game logic.
+This Discord Bot allows users to play chess games, solve tactics, view and analyze previously played games, and check their personal stats. The bot is built using python with the `discord.py` library for interacting with the `Discord API` and the `chess` library for handling chess game logic.
 
 ## Video Demo
 
@@ -41,16 +41,18 @@ To run the bot, follow the instructions given in the `.env` file and and then ru
 The Discord Chess Bot fully utilizes Discord slash commands for its functionality. Please ensure that the bot has the necessary permissions in your server to prevent any issues.
 
 - The `/move` and `/solve` commands require an input in the form of "initial square" to "target square".
-
-- `/challenge` and `/move`:  Use these commands to play chess games with other members of the server.
-- `/tactics` and `/solve`:  Use these commands to solve chess tactics.
-- `/view`:  Use this command to view and analyze previously played games of any member of the server.
-- `/stats`:  Use this command to track tactics solved, score, and games played of any member of the server.
-
 Correct Format:   g1f3  
 Incorrect Format: Nf3
 
-The /tactics command allows you to choose between three levels of tactics:
+- `/challenge` and `/move`:  Use these commands to play chess games with other members of the server.
+
+- `/tactics` and `/solve`:  Use these commands to solve chess tactics.
+
+- `/view`:  Use this command to view and analyze previously played games of any member of the server.
+
+- `/stats`:  Use this command to track tactics solved, score, and games played of any member of the server.
+
+The `/tactics` command allows you to choose between three levels of tactics:
 
 - Easy:   1 or 2 moves
 - Medium: 2 or 3 moves
@@ -70,16 +72,16 @@ Make sure to use the correct format and level when interacting with the bot's sl
 
 5. **utility.py**: This file includes utility functions and classes used throughout the project, such as the database session management.
 
-Note: An empty "tactics" folder must be created for the bot to function. It was not pushed to this repo since Git does not track empty directories.
+Note: An empty `tactics` folder must be created for the bot to function. It was not pushed to this repo since Git does not track empty directories.
 
 ## Database
 
-The project utilizes an SQLite database with the SQLAlchemy ORM for storing games and viewing data.
+The project utilizes an `SQLite database` with the `SQLAlchemy ORM` for storing games and viewing data.
 
 ## Features
 
 - Play chess games with other users on Discord.
-- Solve tactics from the Lichess Tactics database.
+- Solve tactics from the `Lichess Tactics database`.
 - View and analyze previously played games.
 - Check personal stats and game history.
 - Ephemeral messages for privacy.
