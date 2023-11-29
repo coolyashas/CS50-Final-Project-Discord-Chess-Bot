@@ -44,8 +44,8 @@ The Discord Chess Bot fully utilizes Discord slash commands for its functionalit
 
 - Format for `/move` and `/solve` slash commands:
 
-Correct Format:   g1f3  
-Incorrect Format: Nf3
+  Correct Format:   g1f3  
+  Incorrect Format: Nf3
 
 - `/challenge` and `/move`:  Use these commands to play chess games with other members of the server.
 
