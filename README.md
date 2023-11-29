@@ -40,7 +40,7 @@ To run the bot, follow the instructions given in the `.env` file and and then ru
 
 The Discord Chess Bot fully utilizes Discord slash commands for its functionality. Please ensure that the bot has the necessary permissions in your server to prevent any issues.
 
-- The `/move` and `/solve` commands require an input in the form of "initial square to target square".
+- The `/move` and `/solve` commands require an input in the form of "initial square" to "target square".
 
 - `/challenge` and `/move`:  Use these commands to play chess games with other members of the server.
 - `/tactics` and `/solve`:  Use these commands to solve chess tactics.
