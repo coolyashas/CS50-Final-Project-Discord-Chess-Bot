@@ -195,7 +195,7 @@ class Viewfn(commands.Cog):
             options = [
                 SelectOption(
                     label=f"{w.name} | {b.name} | {game.result} | {game.start_time.strftime('%d/%m/%y %H:%M')}",
-                    value=f"B{index}",
+                    value=f"B{index}"
                 )
             ]
 

@@ -32,6 +32,12 @@ To set up the project, follow these steps:
     pip install -r requirements.txt
     ```
 
+4. Install the CairoSVG library using apt:
+
+    ```bash
+    sudo apt-get install cairosvg
+    ```
+
 This will set up the Discord Chess Bot codebase and its dependencies for your use.
 
 To run the bot, follow the instructions given in the `.env` file and and then run the `main.py` file.
